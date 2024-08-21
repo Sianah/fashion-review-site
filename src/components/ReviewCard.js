@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ReviewCard = ({ review }) => {
     return (
         <div style={cardStyle}>
-            <img src={review.image} alt={review.title} style={imageStyle} />
+            <img src={`http://localhost:8000/media/${review.image}`} alt={review.title} style={imageStyle} />
             <div style={cardContentStyle}>
                 <h2 style={titleStyle}>
                     <Link to={`/reviews/${review.id}`} style={linkStyle}>{review.title}</Link>
@@ -15,7 +15,6 @@ const ReviewCard = ({ review }) => {
         </div>
     );
 };
-
 
 const cardStyle = {
     background: '#fff',
