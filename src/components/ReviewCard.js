@@ -55,3 +55,4 @@ const linkStyle = {
 };
 
 export default ReviewCard;
+

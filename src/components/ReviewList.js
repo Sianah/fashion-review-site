@@ -5,9 +5,16 @@ const ReviewList = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
+        console.log('Fetching data...');
         fetch('http://localhost:8000/api/reviews/')
-            .then(response => response.json())
-            .then(data => setReviews(data))
+            .then(response => {
+                console.log('Response received:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data received:', data);
+                setReviews(data);
+            })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
@@ -28,3 +35,4 @@ const listStyle = {
 };
 
 export default ReviewList;
+
