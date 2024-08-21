@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const ReviewDetail = ({ match }) => {
+const ReviewDetail = () => {
+    const { id } = useParams(); // Extract 'id' from the route parameters
     const [review, setReview] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/reviews/${match.params.id}/`)
+        fetch(`http://localhost:8000/api/reviews/${id}/`)
             .then(response => response.json())
             .then(data => setReview(data))
             .catch(error => console.error('Error fetching data:', error));
-    }, [match.params.id]);
+    }, [id]);
 
     return (
         <div style={detailStyle}>

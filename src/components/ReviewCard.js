@@ -16,6 +16,7 @@ const ReviewCard = ({ review }) => {
     );
 };
 
+
 const cardStyle = {
     background: '#fff',
     borderRadius: '10px',
